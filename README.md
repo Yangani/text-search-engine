@@ -67,7 +67,8 @@ You will also see any lint errors in the console.
 
 `yarn test`
 
-Launches the test runner in the interactive watch mode.
+Runs a performance test that does 2M searches with random search terms, and measures execution time for earch method. 
+This takes a long time to complete - depending on CPU power.
 
 ### Build and Deploy
 
@@ -76,6 +77,7 @@ Launches the test runner in the interactive watch mode.
 
 Builds the app for production to the `build` folder.
 It correctly bundles React in production mode and optimizes the build for the best performance.
+
 ### Results
 
 Which was the best search?
