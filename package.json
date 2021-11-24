@@ -1,0 +1,25 @@
+{
+  "name": "text-search-engine",
+  "version": "1.0.0",
+  "main": "server/index.js",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "node-worker-threads-pool": "^1.5.1",
+    "npm": "^8.1.4",
+    "poolifier": "^2.1.0",
+    "random-words": "^1.1.1"
+  },
+  "devDependencies": {
+    "concurrently": "^6.4.0",
+    "nodemon": "^2.0.15"
+  },
+  "scripts": {
+    "install": "cd client && yarn",
+    "test": "node server/test.js",
+    "start": "node server/index.js",
+    "build": "cd client && yarn run build",
+    "dev": "concurrently \"nodemon server\" \"yarn --cwd client/ start\""
+  }
+}
