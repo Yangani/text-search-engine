@@ -1,5 +1,6 @@
 const express = require("express");
 const app = express();
+const path = require("path");
 const bodyParser = require("body-parser");
 
 const port = process.env.PORT || 3030;
@@ -8,10 +9,13 @@ const router = require("./router");
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-/** Load homepage **/
-app.get("/", (req, res) => {
-  console.log(req.query);
-  return res.send({ Homepage: "Welcome to text search engine!" });
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(express.static(path.resolve(__dirname, "../client/build")));
+
+/** Serve client files in prod as homepage **/
+app.get("/", function (req, res) {
+  res.sendFile(path.resolve(__dirname, "../client/build", "index.html"));
 });
 
 /** Route to search **/
